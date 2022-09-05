@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const Post = require('./models/post');
 
 const app = express();
+const api_key = process.env.API_KEY;
 
-mongoose.connect("mongodb+srv://carson:YYHbDCTLiTPzQP2b@cluster0.aojkljv.mongodb.net/node-angular?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://carson:" + api_key + "@cluster0.aojkljv.mongodb.net/node-angular?retryWrites=true&w=majority")
   .then( () => {
     console.log('Connected to database.');
   })
