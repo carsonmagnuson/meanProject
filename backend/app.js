@@ -40,23 +40,11 @@ app.post('/api/posts', (req, res, next) => { // change our posts
   post.save();
   console.log(post);
   res.status(201).json({ // 201 means 'all g, new resource created'
-    message: 'Posts added successfully'
+    message: 'Posts added successfully.'
   });
 });
 
 app.get('/api/posts',(req, res, next) => { // get our posts
-  // const posts = [
-  //   {
-  //     id: 'h12jkkj3h4',
-  //     title: 'first server-side post',
-  //     content: 'gottem'
-  //   },
-  //   {
-  //     id: 'h42kk8j99dj',
-  //     title: 'second server-side post',
-  //     content: 'gottem again!'
-  //   }
-  // ];
   Post.find()
     .then(documents => {
       res.status(200).json({ //200 means 'all g'
@@ -64,7 +52,13 @@ app.get('/api/posts',(req, res, next) => { // get our posts
         posts: documents
       });
     });
+});
 
+app.delete('/api/posts/:id', (req, res, next) => {
+  Post.deleteOne({_id: req.params.id}).then((result) => {
+      console.log(result);
+      res.status(200).json({message: "Post deleted."});
+  });
 });
 
 module.exports = app;
