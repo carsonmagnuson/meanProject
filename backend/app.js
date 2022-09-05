@@ -37,11 +37,14 @@ app.post('/api/posts', (req, res, next) => { // change our posts
     title: req.body.title,
     content: req.body.content
   });
-  post.save();
-  console.log(post);
-  res.status(201).json({ // 201 means 'all g, new resource created'
-    message: 'Posts added successfully.'
+  post.save().then((createdPost) => {
+    res.status(201).json({ // 201 means 'all g, new resource created'
+      message: 'Posts added successfully.',
+      postId: createdPost._id
+    });
   });
+  console.log(post);
+
 });
 
 app.get('/api/posts',(req, res, next) => { // get our posts
