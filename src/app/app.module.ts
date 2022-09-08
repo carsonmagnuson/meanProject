@@ -14,6 +14,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {AppRoutingModule} from "./app-routing.module";
     MatToolbarModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    MatProgressSpinnerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
