@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -19,6 +20,7 @@ mongoose.connect("mongodb+srv://carson:" + api_key + "@cluster0.aojkljv.mongodb.
 
 app.use(bodyParser.json()); // parses req data into json
 app.use(bodyParser.urlencoded({extended: false})); // parses url encoded data
+app.use("/images", express.static(path.join('backend/images')));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', "*"); // setting headers to bypass CORS error - allow access from all servers
