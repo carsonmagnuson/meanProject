@@ -68,7 +68,15 @@ router.put(
   });
 
 router.get('', (req, res, next) => { // get our posts
-  Post.find()
+  const pageSize = +req.query.pageSize;
+  const currentPage = +req.query.page;
+  const postQuery = Post.find();
+  if(pageSize && currentPage) {
+    postQuery
+      .skip(pageSize * (currentPage-1)) // skip to after whatever current page is displaying
+      .limit(pageSize); // cuts off the rest of results after page size limit - can be inefficient for large datasets tho
+  }
+  postQuery
     .then(documents => {
       res.status(200).json({ //200 means 'all g'
         message: 'Posts fetched successfully.',
