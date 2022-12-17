@@ -1,27 +1,31 @@
-# MeanProject
+# Tools Used:
+Angular + TS + Mongodb + Node + Express
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+# Aim:
+The idea behind this project was to explore the Angular and MongoDB frameworks following the Udemy Angular MEAN stack course
 
-## Development server
+# Currently Implemented:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Front-end posting using angular forms
 
-## Code scaffolding
+Image Upload integration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Back-end image and json storage
 
-## Build
+Back-end custom datastructure design
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Basic Pagination
 
-## Running unit tests
+Async server access
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#
 
-## Running end-to-end tests
+## Author(s):
+Carson Magnuson
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#
 
-## Further help
+## Course Link:
+https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
